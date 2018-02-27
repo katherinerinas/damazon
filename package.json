@@ -1,0 +1,23 @@
+{
+  "name": "damazon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "damazon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katherinerinas/damazon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katherinerinas/damazon/issues"
+  },
+  "homepage": "https://github.com/katherinerinas/damazon#readme",
+  "dependencies": {
+    "inquirer": "^5.1.0",
+    "mysql": "^2.15.0"
+  }
+}
