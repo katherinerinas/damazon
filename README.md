@@ -7,4 +7,4 @@ Technologies Used:
 
 HTML/CSS/JAVASCRIPT/NODE/MySQL/MAMP
 
-<img src="/damazon.png" alt="damazon">
+<img src="/screenshots/damazon.png" alt="damazon">
