@@ -1,7 +1,5 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-
-
 var connection = mysql.createConnection({
   host: "localhost",
   port: 8080,
@@ -14,7 +12,9 @@ console.log("Welcome to Damazon-The virtual giftshop for Hoover Dam!");
 
 connection.query('SELECT * FROM Products', function(err, res) {
 if (err) {
+  
   console.error("eror connect: " + err.stack);
+
 }
  makeTable();
 });
@@ -39,6 +39,7 @@ var makeTable = function() {
 
     promptCustomer(res);
   });
+
 };
 
 var promptCustomer = function(res) {
@@ -68,31 +69,27 @@ var promptCustomer = function(res) {
               "UPDATE products SET stock_quantity='" + (res[id].stock_quantity - val.quant) +
               "' WHERE product_name='" + product + "'",
               function(err, res2) {
-                if (err) {
+                  if (err) {
                   throw err;
                 }
                 console.log("SUCCESS-PRODUCT BOUGHT! Is there anything else that you'd like to purchase?");
 
                 makeTable();
               });
-          }
-
-          else {
+          } else {
             console.log("NOT A VALID SELECTION-PLEASE TRY AGAIN!");
             promptCustomer(res);
           }
         });
-      }
       
-      if (val.choice === "Q" || val.choice === "q") {
+      } if(val.choice === "Q" || val.choice === "q") {
         process.exit();
       }
-    }
-
-    if (i === res.length && correct === false) {
-      console.log("NOT A VALID SELECTION");
-      promptCustomer(res);
-    }
+   
+    } if(i === res.length && correct === false) {
+       console.log("NOT A VALID SELECTION");
+       promptCustomer(res);
+     }
   });
 };
 
